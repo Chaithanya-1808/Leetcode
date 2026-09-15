@@ -3,11 +3,14 @@ bool isPalindrome(int x) {
         return false;
     }
     int original = x;
-    long reverse = 0;
-    while(x){
-        reverse = reverse * 10 + x % 10;
-        x = x/10;
+    long long  rev = 0;
+    while(x>0){
+        int dig = x % 10;
+        rev = rev*10 + dig;
+        x/=10;
     }
-    return original == reverse;
-
+    if(original == rev){
+        return true;
+    }
+    return false;
 }
